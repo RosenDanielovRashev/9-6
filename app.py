@@ -222,7 +222,7 @@ fig.update_layout(
 
 # Определи фиксиран мащаб на основната ос (например 0 до 2)
 xaxis_min = 0
-xaxis_max = 4
+xaxis_max = 1.5
 
 # Добавяне на невидим trace, за да се покаже втората ос x2
 fig.add_trace(go.Scatter(
@@ -251,7 +251,7 @@ fig.update_layout(
         zeroline=False,
         ticks="outside",
         tickvals=np.linspace(xaxis_min, xaxis_max, 11),  # примерно 11 tick-а
-        ticktext=[f"{(0.040 * (x - xaxis_min) / (xaxis_max - xaxis_min)):.3f}" for x in np.linspace(xaxis_min, xaxis_max, 11)],  # мащабирани стойности
+        ticktext=[f"{(0.15 * (x - xaxis_min) / (xaxis_max - xaxis_min)):.3f}" for x in np.linspace(xaxis_min, xaxis_max, 11)],  # мащабирани стойности
         ticklabeloverflow="allow",
         title='φ',
         fixedrange=True,
@@ -270,7 +270,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 # Изчисление на σr от x на оранжевата точка (ако съществува)
 if ('x_orange' in locals()) and (x_orange is not None):
-    sigma_r = round(x_orange / 100, 3)
+    sigma_r = round(x_orange / 10, 3)
     x_val = round(x_orange, 3)
     st.markdown(f"**Ꚍμ/p = {sigma_r}**")
 else:
