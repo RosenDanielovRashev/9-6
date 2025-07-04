@@ -204,10 +204,10 @@ if point_on_esr_eo is not None:
         ))
         fig.add_trace(go.Scatter(
             x=[x_orange, x_orange],
-            y=[y_red, 1.5],
+            y=[y_red, 1.1],
             mode='lines',
             line=dict(color='orange', dash='dash'),
-            name='Вертикална линия до y=1.5'
+            name='Вертикална линия до y=1.1'
         ))
 
 # Настройка на графиката
